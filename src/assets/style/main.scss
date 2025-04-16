@@ -1,0 +1,25 @@
+:root {
+    @apply text-sm;
+    --dock-background: rgba(255, 255, 255, 0.1);
+}
+
+#app {
+    @apply relative w-screen h-screen;
+}
+
+.arco-card {
+    background: rgba(170, 167, 167, 0.58) !important;
+    box-shadow: 0 8px 32px 0 rgba(152, 153, 166, 0.37) !important;
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+
+    .arco-card-header-title {
+        color: rgb(255 255 255 / 59%);
+    }
+
+    .arco-card-header {
+        @apply border-none !important;
+    }
+}

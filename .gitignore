@@ -29,3 +29,5 @@ coverage
 
 *.tsbuildinfo
 /package-lock.json
+/components.d.ts
+/types/auto-import.d.ts
