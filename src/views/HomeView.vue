@@ -1,54 +1,74 @@
 <template>
-	<div class="rank-container ">
+	<div class="rank-container">
+		<div class="z-20">
+			<Menubar />
+		</div>
+		<div class="relative overflow-x-auto w-full h-full p-4 px-28 z-20">
+			<swiper
+				:keyboard="{enabled: true}"
+				:modules="modules"
+				:mousewheel="true"
+				:navigation="false"
+				:pagination="{clickable: true}"
+				:slidesPerView="1"
+				:spaceBetween="30"
+			>
+				<swiper-slide>
+					<div class="grid grid-cols-5 gap-4">
+						<a-card
+							v-for="item in Array.from({length:15}, (_, i) => i+1)"
+							:key="'2222'+item"
+							title="Arco Card"
+							:body-style="{height:'250px'}"
+						>
+							<ul class="p-0">
+								<li>
+									<a href="@#" class="text-white">asdas</a>
+								</li>
+							</ul>
+						</a-card>
+					</div>
+				</swiper-slide>
+			</swiper>
 
-		<Menubar />
-
-		<div class="overflow-x-auto pb-24">
-			<div class="grid grid-cols-8 gap-4 p-4">
-				<a-card class="col-span-2 backdrop-blur-3xl bg-white/30" title="Arco Card">
-					<p>ByteDance's core product, Toutiao ("Headlines"), is a content platform in
-						China and around the world. Toutiao started out as a news recommendation
-						engine and gradually evolved into a platform delivering content in various
-						formats.</p>
-					<p>ByteDance's core product, Toutiao ("Headlines"), is a content platform in
-						China and around the world. Toutiao started out as a news recommendation
-						engine and gradually evolved into a platform delivering content in various
-						formats.</p>
-					<p>ByteDance's core product, Toutiao ("Headlines"), is a content platform in
-						China and around the world. Toutiao started out as a news recommendation
-						engine and gradually evolved into a platform delivering content in various
-						formats.</p>
-					<p>ByteDance's core product, Toutiao ("Headlines"), is a content platform in
-						China and around the world. Toutiao started out as a news recommendation
-						engine and gradually evolved into a platform delivering content in various
-						formats.</p>
-					<p>ByteDance's core product, Toutiao ("Headlines"), is a content platform in
-						China and around the world. Toutiao started out as a news recommendation
-						engine and gradually evolved into a platform delivering content in various
-						formats.</p>
-				</a-card>
-				<a-card v-for="item in Array.from({length:1}, (_, i) => i+1)" :key="'2222'+item" title="Arco Card">
-					ByteDance's core product, Toutiao ("Headlines"), is a content platform in
-					China and around the world. Toutiao started out as a news recommendation
-					engine and gradually evolved into a platform delivering content in various
-					formats.
-				</a-card>
-			</div>
+		</div>
+		<div class="z-20">
+			<MacDock />
 		</div>
 	</div>
-	<MacDock />
 </template>
 
 <script lang="ts" setup>
-import MacDock from '@/components/Docker/Docker.vue'
 import Menubar from '@/components/Menubar/Menubar.vue'
+import MacDock from '@/components/Docker/Docker.vue'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Keyboard, Mousewheel, Navigation, Pagination, Virtual } from 'swiper/modules'
+
+import 'swiper/scss'
+import 'swiper/scss/pagination'
+import 'swiper/scss/navigation'
+import 'swiper/scss/virtual'
+
+const modules = [Keyboard, Pagination, Navigation, Mousewheel, Virtual]
 </script>
 
 <style lang="scss" scoped>
 .rank-container {
-	@apply relative w-full h-full flex flex-col;
-	background-image: url('@/assets/images/photo-1584565413502-db5cd7e28da7.avif');
+	@apply relative w-full h-full grid grid-rows-[30px_1fr_64px];
+	background-image: url('@/assets/images/bg1.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	&::before {
+		content: "";
+		position: absolute;
+		background: rgb(0 0 0 / 0.03);
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 11;
+	}
 }
+
 </style>
