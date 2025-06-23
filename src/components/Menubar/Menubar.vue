@@ -42,7 +42,8 @@
 							<icon-search />
 						</button>
 					</li>
-					<li>4月16日 周三 14:41</li>
+					<!-- 4月16日 周三 14:41 -->
+					<li>{{currentTime}}</li>
 				</ul>
 			</div>
 		</div>
@@ -51,6 +52,8 @@
 
 <script lang="ts" setup>
 
+import { useCurrentTime } from '@/hooks/currentTime.ts'
+
 defineOptions({
 	name: 'Menubar'
 })
@@ -58,6 +61,8 @@ defineOptions({
 const handleQuery = () => {
 	console.log(123)
 }
+
+const {currentTime} = useCurrentTime()
 </script>
 
 <style lang="scss" scoped>
