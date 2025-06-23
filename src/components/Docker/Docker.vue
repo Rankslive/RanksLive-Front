@@ -22,7 +22,10 @@
 						/>
 					</a-tooltip>
 				</li>
-				<li>
+				<li
+					v-for="item in Array.from({length:15}, (_, i) => i+1)"
+					:key="'dock'+1"
+				>
 					<a-tooltip content="This is tooltip content">
 						<img
 							:src="terminal"
@@ -50,7 +53,7 @@ defineOptions({
 const handleSetting = () => {
 	Modal.info({
 		title: 'Info Title',
-		content:'asdsd'
+		content: 'welcome'
 	})
 }
 
@@ -58,7 +61,7 @@ const handleSetting = () => {
 
 <style lang="scss" scoped>
 .dock {
-	@apply absolute bottom-1 w-full flex justify-center items-center;
+	@apply absolute bottom-3 w-full flex justify-center items-center;
 
 	.dock-list-container {
 		@apply py-2 px-4 rounded-2xl;
