@@ -1,5 +1,5 @@
 <template>
-	<div class="menubar text-sm">
+	<div class="menubar text-sm backdrop-blur">
 		<div class="flex justify-between items-center p-2">
 			<div class="">
 				<ul class="flex items-center gap-4 pl-0">
@@ -28,8 +28,8 @@
 						</button>
 					</li>
 					<li>
-						<a-tooltip content="sss">
-							<a class="text-white" href="#link">
+						<a-tooltip content="RanksLive ApiHub">
+							<a class="text-white" href="https://github.com/Rankslive/RanksLiveApi" target="_blank">
 								<icon-github />
 							</a>
 						</a-tooltip>
