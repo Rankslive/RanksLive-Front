@@ -20,6 +20,7 @@ export function useLand(options: UseLandOptions = {}): any {
 			container.style.display = 'flex'
 			container.style.flexDirection = 'column'
 			container.style.alignItems = 'center'
+			container.style.zIndex = '30'
 			// 设置子元素之间的间隔
 			container.style.gap = '10px'
 			document.body.appendChild(container)
