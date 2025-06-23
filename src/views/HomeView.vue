@@ -1,8 +1,6 @@
 <template>
 	<div class="rank-container">
-		<div class="z-20">
-			<Menubar />
-		</div>
+		<Menubar />
 		<div class="relative overflow-x-auto w-full h-full py-4 px-6 z-20">
 			<div class="grid grid-cols-5 gap-5">
 				<a-card
@@ -20,7 +18,8 @@
 							>
 								<a class="flex justify-between items-center text-slate-200" href="@#">
 									<span>1.</span>
-									<span class="mr-auto line-clamp-1">95岁离休干部被认定为恶势力主犯95岁离休干部被认定为恶势力主犯</span>
+									<span
+										class="mr-auto line-clamp-1">95岁离休干部被认定为恶势力主犯95岁离休干部被认定为恶势力主犯</span>
 									<span>1457324</span>
 								</a>
 							</li>
@@ -41,13 +40,13 @@ import MacDock from '@/components/Docker/Docker.vue'
 import { useLand } from '@/hooks/useLand.ts'
 
 useLand({
-	message:'欢迎来到热门榜单数据平台'
+	message: '欢迎来到热门榜单数据平台'
 })
 </script>
 
 <style lang="scss" scoped>
 .rank-container {
-	@apply relative w-full h-full grid grid-rows-[30px_1fr_80px];
+	@apply relative w-full h-full grid grid-rows-[35px_1fr_80px];
 	background-image: url('@/assets/images/bg1.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
